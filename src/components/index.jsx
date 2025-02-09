@@ -1,3 +1,3 @@
-export const Button = ({ label }) => {
+export const Button = ({ label="RIdha" }) => {
     return <button>{label}</button>
 }

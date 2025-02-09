@@ -80,7 +80,7 @@ function vt() {
   var se = D.prototype = new te();
   se.constructor = D, me(se, H.prototype), se.isPureReactComponent = !0;
   var ae = Array.isArray, O = { H: null, A: null, T: null, S: null }, V = Object.prototype.hasOwnProperty;
-  function ie(n, u, p, d, g, R) {
+  function ie(n, u, p, d, h, R) {
     return p = R.ref, {
       $$typeof: k,
       type: n,
@@ -89,7 +89,7 @@ function vt() {
       props: R
     };
   }
-  function ge(n, u) {
+  function he(n, u) {
     return ie(
       n.type,
       u,
@@ -102,7 +102,7 @@ function vt() {
   function $(n) {
     return typeof n == "object" && n !== null && n.$$typeof === k;
   }
-  function he(n) {
+  function ge(n) {
     var u = { "=": "=0", ":": "=2" };
     return "$" + n.replace(/[=:]/g, function(p) {
       return u[p];
@@ -110,7 +110,7 @@ function vt() {
   }
   var fe = /\/+/g;
   function re(n, u) {
-    return typeof n == "object" && n !== null && n.key != null ? he("" + n.key) : u.toString(36);
+    return typeof n == "object" && n !== null && n.key != null ? ge("" + n.key) : u.toString(36);
   }
   function J() {
   }
@@ -137,7 +137,7 @@ function vt() {
     }
     throw n;
   }
-  function I(n, u, p, d, g) {
+  function I(n, u, p, d, h) {
     var R = typeof n;
     (R === "undefined" || R === "boolean") && (n = null);
     var m = !1;
@@ -161,20 +161,20 @@ function vt() {
                 u,
                 p,
                 d,
-                g
+                h
               );
           }
       }
     if (m)
-      return g = g(n), m = d === "" ? "." + re(n, 0) : d, ae(g) ? (p = "", m != null && (p = m.replace(fe, "$&/") + "/"), I(g, u, p, "", function(le) {
+      return h = h(n), m = d === "" ? "." + re(n, 0) : d, ae(h) ? (p = "", m != null && (p = m.replace(fe, "$&/") + "/"), I(h, u, p, "", function(le) {
         return le;
-      })) : g != null && ($(g) && (g = ge(
-        g,
-        p + (g.key == null || n && n.key === g.key ? "" : ("" + g.key).replace(
+      })) : h != null && ($(h) && (h = he(
+        h,
+        p + (h.key == null || n && n.key === h.key ? "" : ("" + h.key).replace(
           fe,
           "$&/"
         ) + "/") + m
-      )), u.push(g)), 1;
+      )), u.push(h)), 1;
     m = 0;
     var x = d === "" ? "." : d + ":";
     if (ae(n))
@@ -184,7 +184,7 @@ function vt() {
           u,
           p,
           R,
-          g
+          h
         );
     else if (A = Oe(n), typeof A == "function")
       for (n = A.call(n), A = 0; !(d = n.next()).done; )
@@ -193,7 +193,7 @@ function vt() {
           u,
           p,
           R,
-          g
+          h
         );
     else if (R === "object") {
       if (typeof n.then == "function")
@@ -202,7 +202,7 @@ function vt() {
           u,
           p,
           d,
-          g
+          h
         );
       throw u = String(n), Error(
         "Objects are not valid as a React child (found: " + (u === "[object Object]" ? "object with keys {" + Object.keys(n).join(", ") + "}" : u) + "). If you meant to render a collection of children, use an array instead."
@@ -212,9 +212,9 @@ function vt() {
   }
   function W(n, u, p) {
     if (n == null) return n;
-    var d = [], g = 0;
+    var d = [], h = 0;
     return I(n, d, "", "", function(R) {
-      return u.call(p, R, g++);
+      return u.call(p, R, h++);
     }), d;
   }
   function ne(n) {
@@ -289,9 +289,9 @@ function vt() {
       throw Error(
         "The argument must be a React element, but you passed " + n + "."
       );
-    var d = me({}, n.props), g = n.key, R = void 0;
+    var d = me({}, n.props), h = n.key, R = void 0;
     if (u != null)
-      for (m in u.ref !== void 0 && (R = void 0), u.key !== void 0 && (g = "" + u.key), u)
+      for (m in u.ref !== void 0 && (R = void 0), u.key !== void 0 && (h = "" + u.key), u)
         !V.call(u, m) || m === "key" || m === "__self" || m === "__source" || m === "ref" && u.ref === void 0 || (d[m] = u[m]);
     var m = arguments.length - 2;
     if (m === 1) d.children = p;
@@ -300,7 +300,7 @@ function vt() {
         x[A] = arguments[A + 2];
       d.children = x;
     }
-    return ie(n.type, g, void 0, void 0, R, d);
+    return ie(n.type, h, void 0, void 0, R, d);
   }, y.createContext = function(n) {
     return n = {
       $$typeof: U,
@@ -314,21 +314,21 @@ function vt() {
       _context: n
     }, n;
   }, y.createElement = function(n, u, p) {
-    var d, g = {}, R = null;
+    var d, h = {}, R = null;
     if (u != null)
       for (d in u.key !== void 0 && (R = "" + u.key), u)
-        V.call(u, d) && d !== "key" && d !== "__self" && d !== "__source" && (g[d] = u[d]);
+        V.call(u, d) && d !== "key" && d !== "__self" && d !== "__source" && (h[d] = u[d]);
     var m = arguments.length - 2;
-    if (m === 1) g.children = p;
+    if (m === 1) h.children = p;
     else if (1 < m) {
       for (var x = Array(m), A = 0; A < m; A++)
         x[A] = arguments[A + 2];
-      g.children = x;
+      h.children = x;
     }
     if (n && n.defaultProps)
       for (d in m = n.defaultProps, m)
-        g[d] === void 0 && (g[d] = m[d]);
-    return ie(n, R, void 0, void 0, null, g);
+        h[d] === void 0 && (h[d] = m[d]);
+    return ie(n, R, void 0, void 0, null, h);
   }, y.createRef = function() {
     return { current: null };
   }, y.forwardRef = function(n) {
@@ -349,8 +349,8 @@ function vt() {
     var u = O.T, p = {};
     O.T = p;
     try {
-      var d = n(), g = O.S;
-      g !== null && g(p, d), typeof d == "object" && d !== null && typeof d.then == "function" && d.then(b, Se);
+      var d = n(), h = O.S;
+      h !== null && h(p, d), typeof d == "object" && d !== null && typeof d.then == "function" && d.then(b, Se);
     } catch (R) {
       Se(R);
     } finally {
@@ -468,7 +468,7 @@ function pt() {
       function z(e) {
         if (e == null) return null;
         if (typeof e == "function")
-          return e.$$typeof === h ? null : e.displayName || e.name || null;
+          return e.$$typeof === g ? null : e.displayName || e.name || null;
         if (typeof e == "string") return e;
         switch (e) {
           case A:
@@ -750,24 +750,24 @@ function pt() {
           e.props
         ), r._store.validated = e._store.validated, r;
       }
-      function ge(e, r) {
+      function he(e, r) {
         if (typeof e == "object" && e && e.$$typeof !== lt) {
           if (C(e))
             for (var o = 0; o < e.length; o++) {
               var s = e[o];
-              $(s) && he(s, r);
+              $(s) && ge(s, r);
             }
           else if ($(e))
             e._store && (e._store.validated = 1);
           else if (o = ee(e), typeof o == "function" && o !== e.entries && (o = o.call(e), o !== e))
             for (; !(e = o.next()).done; )
-              $(e.value) && he(e.value, r);
+              $(e.value) && ge(e.value, r);
         }
       }
       function $(e) {
         return typeof e == "object" && e !== null && e.$$typeof === m;
       }
-      function he(e, r) {
+      function ge(e, r) {
         if (e._store && !e._store.validated && e.key == null && (e._store.validated = 1, r = fe(r), !Fe[r])) {
           Fe[r] = !0;
           var o = "";
@@ -977,13 +977,13 @@ See https://react.dev/link/invalid-hook-call for tips about how to debug and fix
           "You seem to have overlapping act() calls, this is not supported. Be sure to await previous act() calls before making a new one. "
         ), Ue = r;
       }
-      function g(e, r, o) {
+      function h(e, r, o) {
         var s = v.actQueue;
         if (s !== null)
           if (s.length !== 0)
             try {
               R(s), u(function() {
-                return g(e, r, o);
+                return h(e, r, o);
               });
               return;
             } catch (f) {
@@ -1056,7 +1056,7 @@ See https://react.dev/link/invalid-hook-call for tips about how to debug and fix
       for (j in _)
         _.hasOwnProperty(j) && F(j, _[j]);
       U.prototype = N.prototype, _ = q.prototype = new U(), _.constructor = q, a(_, N.prototype), _.isPureReactComponent = !0;
-      var C = Array.isArray, h = Symbol.for("react.client.reference"), v = {
+      var C = Array.isArray, g = Symbol.for("react.client.reference"), v = {
         H: null,
         A: null,
         T: null,
@@ -1141,7 +1141,7 @@ See https://react.dev/link/invalid-hook-call for tips about how to debug and fix
                   if (d(r, o), o === 0) {
                     try {
                       R(s), u(function() {
-                        return g(
+                        return h(
                           Y,
                           w,
                           S
@@ -1177,7 +1177,7 @@ See https://react.dev/link/invalid-hook-call for tips about how to debug and fix
         return {
           then: function(w, S) {
             f = !0, o === 0 ? (v.actQueue = s, u(function() {
-              return g(
+              return h(
                 T,
                 w,
                 S
@@ -1220,7 +1220,7 @@ See https://react.dev/link/invalid-hook-call for tips about how to debug and fix
           s.children = c;
         }
         for (s = V(e.type, f, void 0, void 0, l, s), f = 2; f < arguments.length; f++)
-          ge(arguments[f], s.type);
+          he(arguments[f], s.type);
         return s;
       }, E.createContext = function(e) {
         return e = {
@@ -1237,7 +1237,7 @@ See https://react.dev/link/invalid-hook-call for tips about how to debug and fix
       }, E.createElement = function(e, r, o) {
         if (Ee(e))
           for (var s = 2; s < arguments.length; s++)
-            ge(arguments[s], e);
+            he(arguments[s], e);
         else {
           if (s = "", (e === void 0 || typeof e == "object" && e !== null && Object.keys(e).length === 0) && (s += " You likely forgot to export your component from the file it's defined in, or you might have mixed up default and named imports."), e === null) var f = "null";
           else
@@ -1412,7 +1412,7 @@ function mt() {
           return "Fragment";
         case O:
           return "Portal";
-        case ge:
+        case he:
           return "Profiler";
         case ie:
           return "StrictMode";
@@ -1425,7 +1425,7 @@ function mt() {
         switch (typeof t.tag == "number" && console.error(
           "Received an unexpected object in getComponentNameFromType(). This is likely a bug in React. Please file an issue."
         ), t.$$typeof) {
-          case he:
+          case ge:
             return (t.displayName || "Context") + ".Provider";
           case $:
             return (t._context.displayName || "Context") + ".Consumer";
@@ -1466,7 +1466,7 @@ function mt() {
     function ee() {
     }
     function P() {
-      if (g === 0) {
+      if (h === 0) {
         R = console.log, m = console.info, x = console.warn, A = console.error, le = console.group, je = console.groupCollapsed, ye = console.groupEnd;
         var t = {
           configurable: !0,
@@ -1484,10 +1484,10 @@ function mt() {
           groupEnd: t
         });
       }
-      g++;
+      h++;
     }
     function N() {
-      if (g--, g === 0) {
+      if (h--, h === 0) {
         var t = { configurable: !0, enumerable: !0, writable: !0 };
         Object.defineProperties(console, {
           log: u({}, t, { value: R }),
@@ -1499,7 +1499,7 @@ function mt() {
           groupEnd: u({}, t, { value: ye })
         });
       }
-      0 > g && console.error(
+      0 > h && console.error(
         "disabledDepth fell below zero. This is a bug in React. Please file an issue."
       );
     }
@@ -1575,27 +1575,27 @@ function mt() {
           "name",
           { value: "DetermineComponentFrameRoot" }
         );
-        var h = j.DetermineComponentFrameRoot(), v = h[0], B = h[1];
+        var g = j.DetermineComponentFrameRoot(), v = g[0], B = g[1];
         if (v && B) {
           var M = v.split(`
 `), L = B.split(`
 `);
-          for (h = C = 0; C < M.length && !M[C].includes(
+          for (g = C = 0; C < M.length && !M[C].includes(
             "DetermineComponentFrameRoot"
           ); )
             C++;
-          for (; h < L.length && !L[h].includes(
+          for (; g < L.length && !L[g].includes(
             "DetermineComponentFrameRoot"
           ); )
-            h++;
-          if (C === M.length || h === L.length)
-            for (C = M.length - 1, h = L.length - 1; 1 <= C && 0 <= h && M[C] !== L[h]; )
-              h--;
-          for (; 1 <= C && 0 <= h; C--, h--)
-            if (M[C] !== L[h]) {
-              if (C !== 1 || h !== 1)
+            g++;
+          if (C === M.length || g === L.length)
+            for (C = M.length - 1, g = L.length - 1; 1 <= C && 0 <= g && M[C] !== L[g]; )
+              g--;
+          for (; 1 <= C && 0 <= g; C--, g--)
+            if (M[C] !== L[g]) {
+              if (C !== 1 || g !== 1)
                 do
-                  if (C--, h--, 0 > h || M[C] !== L[h]) {
+                  if (C--, g--, 0 > g || M[C] !== L[g]) {
                     var pe = `
 ` + M[C].replace(
                       " at new ",
@@ -1603,7 +1603,7 @@ function mt() {
                     );
                     return t.displayName && pe.includes("<anonymous>") && (pe = pe.replace("<anonymous>", t.displayName)), typeof t == "function" && be.set(t, pe), pe;
                   }
-                while (1 <= C && 0 <= h);
+                while (1 <= C && 0 <= g);
               break;
             }
         }
@@ -1695,31 +1695,31 @@ function mt() {
       }), Object.freeze && (Object.freeze(t.props), Object.freeze(t)), t;
     }
     function me(t, a, i, _, j, C) {
-      if (typeof t == "string" || typeof t == "function" || t === V || t === ge || t === ie || t === re || t === J || t === W || typeof t == "object" && t !== null && (t.$$typeof === I || t.$$typeof === ce || t.$$typeof === he || t.$$typeof === $ || t.$$typeof === fe || t.$$typeof === p || t.getModuleId !== void 0)) {
-        var h = a.children;
-        if (h !== void 0)
+      if (typeof t == "string" || typeof t == "function" || t === V || t === he || t === ie || t === re || t === J || t === W || typeof t == "object" && t !== null && (t.$$typeof === I || t.$$typeof === ce || t.$$typeof === ge || t.$$typeof === $ || t.$$typeof === fe || t.$$typeof === p || t.getModuleId !== void 0)) {
+        var g = a.children;
+        if (g !== void 0)
           if (_)
-            if (d(h)) {
-              for (_ = 0; _ < h.length; _++)
-                X(h[_], t);
-              Object.freeze && Object.freeze(h);
+            if (d(g)) {
+              for (_ = 0; _ < g.length; _++)
+                X(g[_], t);
+              Object.freeze && Object.freeze(g);
             } else
               console.error(
                 "React.jsx: Static children should always be an array. You are likely explicitly calling React.jsxs or React.jsxDEV. Use the Babel transform instead."
               );
-          else X(h, t);
+          else X(g, t);
       } else
-        h = "", (t === void 0 || typeof t == "object" && t !== null && Object.keys(t).length === 0) && (h += " You likely forgot to export your component from the file it's defined in, or you might have mixed up default and named imports."), t === null ? _ = "null" : d(t) ? _ = "array" : t !== void 0 && t.$$typeof === ae ? (_ = "<" + (k(t.type) || "Unknown") + " />", h = " Did you accidentally export a JSX literal instead of a component?") : _ = typeof t, console.error(
+        g = "", (t === void 0 || typeof t == "object" && t !== null && Object.keys(t).length === 0) && (g += " You likely forgot to export your component from the file it's defined in, or you might have mixed up default and named imports."), t === null ? _ = "null" : d(t) ? _ = "array" : t !== void 0 && t.$$typeof === ae ? (_ = "<" + (k(t.type) || "Unknown") + " />", g = " Did you accidentally export a JSX literal instead of a component?") : _ = typeof t, console.error(
           "React.jsx: type is invalid -- expected a string (for built-in components) or a class/function (for composite components) but got: %s.%s",
           _,
-          h
+          g
         );
       if (n.call(a, "key")) {
-        h = k(t);
+        g = k(t);
         var v = Object.keys(a).filter(function(M) {
           return M !== "key";
         });
-        _ = 0 < v.length ? "{key: someKey, " + v.join(": ..., ") + ": ...}" : "{key: someKey}", ke[h + _] || (v = 0 < v.length ? "{" + v.join(": ..., ") + ": ...}" : "{}", console.error(
+        _ = 0 < v.length ? "{key: someKey, " + v.join(": ..., ") + ": ...}" : "{key: someKey}", ke[g + _] || (v = 0 < v.length ? "{" + v.join(": ..., ") + ": ...}" : "{}", console.error(
           `A props object containing a "key" prop is being spread into JSX:
   let props = %s;
   <%s {...props} />
@@ -1727,20 +1727,20 @@ React keys must be passed directly to JSX without using spread:
   let props = %s;
   <%s key={someKey} {...props} />`,
           _,
-          h,
+          g,
           v,
-          h
-        ), ke[h + _] = !0);
+          g
+        ), ke[g + _] = !0);
       }
-      if (h = null, i !== void 0 && (F(i), h = "" + i), z(a) && (F(a.key), h = "" + a.key), "key" in a) {
+      if (g = null, i !== void 0 && (F(i), g = "" + i), z(a) && (F(a.key), g = "" + a.key), "key" in a) {
         i = {};
         for (var B in a)
           B !== "key" && (i[B] = a[B]);
       } else i = a;
-      return h && Ee(
+      return g && Ee(
         i,
         typeof t == "function" ? t.displayName || t.name || "Unknown" : t
-      ), Ae(t, h, C, j, Q(), i);
+      ), Ae(t, g, C, j, Q(), i);
     }
     function X(t, a) {
       if (typeof t == "object" && t && t.$$typeof !== Te) {
@@ -1783,7 +1783,7 @@ Check the render method of \`` + i + "`."), a || (t = k(t)) && (a = `
 
 Check the top-level render call using <` + t + ">."), a;
     }
-    var se = Et(), ae = Symbol.for("react.transitional.element"), O = Symbol.for("react.portal"), V = Symbol.for("react.fragment"), ie = Symbol.for("react.strict_mode"), ge = Symbol.for("react.profiler"), $ = Symbol.for("react.consumer"), he = Symbol.for("react.context"), fe = Symbol.for("react.forward_ref"), re = Symbol.for("react.suspense"), J = Symbol.for("react.suspense_list"), ce = Symbol.for("react.memo"), I = Symbol.for("react.lazy"), W = Symbol.for("react.offscreen"), ne = Symbol.iterator, Se = Symbol.for("react.client.reference"), b = se.__CLIENT_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE, n = Object.prototype.hasOwnProperty, u = Object.assign, p = Symbol.for("react.client.reference"), d = Array.isArray, g = 0, R, m, x, A, le, je, ye;
+    var se = Et(), ae = Symbol.for("react.transitional.element"), O = Symbol.for("react.portal"), V = Symbol.for("react.fragment"), ie = Symbol.for("react.strict_mode"), he = Symbol.for("react.profiler"), $ = Symbol.for("react.consumer"), ge = Symbol.for("react.context"), fe = Symbol.for("react.forward_ref"), re = Symbol.for("react.suspense"), J = Symbol.for("react.suspense_list"), ce = Symbol.for("react.memo"), I = Symbol.for("react.lazy"), W = Symbol.for("react.offscreen"), ne = Symbol.iterator, Se = Symbol.for("react.client.reference"), b = se.__CLIENT_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE, n = Object.prototype.hasOwnProperty, u = Object.assign, p = Symbol.for("react.client.reference"), d = Array.isArray, h = 0, R, m, x, A, le, je, ye;
     ee.__reactDisabledLog = !0;
     var _e, we, de = !1, be = new (typeof WeakMap == "function" ? WeakMap : Map)(), Te = Symbol.for("react.client.reference"), ve, xe = {}, ke = {}, Ne = {};
     Me.Fragment = V, Me.jsx = function(t, a, i, _, j) {
@@ -1794,11 +1794,11 @@ Check the top-level render call using <` + t + ">."), a;
   }()), Me;
 }
 var ct;
-function gt() {
+function ht() {
   return ct || (ct = 1, process.env.NODE_ENV === "production" ? Le.exports = dt() : Le.exports = mt()), Le.exports;
 }
-var ht = gt();
-const yt = ({ label: k }) => /* @__PURE__ */ ht.jsx("button", { children: k });
+var gt = ht();
+const yt = ({ label: k = "RIdha" }) => /* @__PURE__ */ gt.jsx("button", { children: k });
 export {
   yt as Button
 };
