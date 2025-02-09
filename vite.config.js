@@ -1,7 +1,7 @@
 import { dirname, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { defineConfig } from 'vite'
-const __dirname = dirname(fileURLToPath(import.meta.url))
+import react from '@vitejs/plugin-react'
 
 // https://vite.dev/config/
 export default defineConfig({
@@ -11,9 +11,10 @@ export default defineConfig({
       name: 'package-example',
       // the proper extensions will be added
       fileName: 'package-example',
-      formats:["es"]
+      formats: ["es"]
     },
   },
+
   rollupOptions: {
     // make sure to externalize deps that shouldn't be bundled
     // into your library
@@ -26,4 +27,5 @@ export default defineConfig({
       },
     },
   },
+  plugins: [react()]
 })
