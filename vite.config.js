@@ -10,7 +10,8 @@ export default defineConfig({
       entry: resolve(__dirname, 'src/index.js'),
       name: 'package-example',
       // the proper extensions will be added
-      fileName: 'package-example.js',
+      fileName: 'package-example',
+      formats:["es"]
     },
   },
   rollupOptions: {

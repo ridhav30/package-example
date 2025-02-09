@@ -1,1 +1,0 @@
-(function(e,t){typeof exports=="object"&&typeof module<"u"?t(exports):typeof define=="function"&&define.amd?define(["exports"],t):(e=typeof globalThis<"u"?globalThis:e||self,t(e["package-example"]={}))})(this,function(e){"use strict";const t=({label:n})=>React.createElement("button",null,n);e.Button=t,Object.defineProperty(e,Symbol.toStringTag,{value:"Module"})});
