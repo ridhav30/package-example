@@ -6,7 +6,7 @@
   "files": ["dist"],
   "main": "./dist/package-example.umd.cjs",
   "module": "./dist/package-example.js",
-  "exports":{
+  "exports": {
     ".": {
       "import": "./dist/package-example.js",
       "require": "./dist/package-example.umd.cjs"
